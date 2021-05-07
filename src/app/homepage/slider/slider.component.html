@@ -1,0 +1,35 @@
+<ngb-carousel
+  [showNavigationArrows]="false"
+  [showNavigationIndicators]="true"
+  interval="1200"
+  [keyboard]="true"
+  [pauseOnHover]="true"
+  [wrap]="true"
+  [activeId]="'secondSlide'">
+  <ng-template ngbSlide>
+    <img src="../../assets/sliderpic1.png" alt="Angular Carousel 1">
+    <div class="darken-overlay">
+      <div class="card-img-overlay glow">
+<!--        <h5 class="mt-5 ml-5 text-white text-uppercase font-weight-bolder">Welcome to MWC Consultancy</h5>-->
+        <p class="display-4 ml-5 text-white font-weight-bolder mt-xl-5">Unlocking</p>
+        <h1 class="display-4 ml-5 text-white font-weight-bolder">The Business And Human Potentials</h1>
+<!--        <p><a class="btn px-4 py-3 ml-5 mt-3" style="background-color: #ff8416; color: white" (click)="sliderServiceBtnClick()">Our Services</a>-->
+<!--        </p>-->
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template ngbSlide>
+    <img src="../../assets/sliderpic2.png" alt="Angular Carousel 1">
+    <div class="darken-overlay">
+      <div class="card-img-overlay glow">
+<!--        <h5 class="mt-5 ml-5 text-white text-uppercase font-weight-bolder">Todays Talent, Tommorow Success</h5>-->
+        <p class="display-4 ml-5 text-white font-weight-bolder mt-xl-5">Unlocking </p>
+        <h1 class="display-4 ml-5 text-white font-weight-bolder">The Business And Human Potentials</h1>
+<!--        <p><a class="btn px-4 py-3 ml-5 mt-3" style="background-color: #ff8416; color: white" (click)="sliderServiceBtnClick()">Our Services</a>-->
+<!--        </p>-->
+      </div>
+    </div>
+  </ng-template>
+
+</ngb-carousel>

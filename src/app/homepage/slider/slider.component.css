@@ -1,0 +1,115 @@
+ngb-carousel {
+  max-width: 100%;
+  margin: 0px auto;
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 600px;
+  position: relative;
+  z-index: 0;
+}
+
+ngb-carousel img {
+  width: 100%;
+  outline: none;
+
+
+}
+
+ngb-carousel {
+  width: inherit;
+  height: inherit;
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-item {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
+  z-index: -1;
+}
+
+.carousel-item.active{
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  z-index: 20;
+}
+
+
+.carousel-control-next {
+  z-index: 20;
+}
+
+.carousel-indicators{
+  z-index: 20;
+}
+
+.absolute-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+
+
+.darken-overlay div {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.glow {
+
+  /*background: linear-gradient(90deg, #000, #fff, #000);*/
+  background: linear-gradient(90deg, #0F3B65, #fff, #0F3B65);
+  /*background: #0F3B65 !important;*/
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 12s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+@media (max-width: 710.98px) {
+  .glow {
+    background-repeat: no-repeat;
+    animation: animate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+
+  @keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+}
+
+
+
+
+
+

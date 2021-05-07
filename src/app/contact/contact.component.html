@@ -1,0 +1,85 @@
+<app-header></app-header>
+<section class="hero-wrap hero-wrap-2" style="background-image: url('../../assets/banner.jpg');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate text-center">
+        <h1 class="mb-2 bread">Contact Us</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section contact-section">
+  <div class="container">
+    <div class="row d-flex mb-5 contact-info justify-content-center">
+      <div class="col-md-8">
+        <div class="row mb-5">
+          <div class="col-md-4 text-center py-4">
+            <div class="icon">
+              <i class="fa fa-map-marker" style="font-size: 40px; color: #ff8416"></i>
+            </div>
+            <p><span style="color: #233e62; font-size: 25px; font-weight: bold">Address:</span>MWC LLC <br>P. O. Box - 212046 <br><p>Doha, Qatar </p>
+
+          </div>
+          <div class="col-md-4 text-center border-height py-4">
+            <div class="icon">
+              <i class="fa fa-phone" style="font-size: 40px; color: #ff8416"></i>
+            </div>
+            <p><span style="color: #233e62; font-size: 25px; font-weight: bold">Phone:</span> <a href="tel://97444231155 ">+974 4423 1155</a></p>
+          </div>
+          <div class="col-md-4 text-center py-4">
+            <div class="icon">
+              <i class="fa fa-at" style="font-size: 40px; color: #ff8416"></i>
+            </div>
+            <p><span style="color: #233e62; font-size: 25px; font-weight: bold">Email:</span> <a href="mailto:contact@mwc-consultancy.com">contact@mwc-consultancy.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row block-9 justify-content-center mb-5">
+      <div class="col-md-8 mb-md-5">
+        <h2 class="text-center">If you have any questions <br>please do not hesitate to send us a message</h2>
+
+        <form [formGroup]="contactForm"class="bg-light p-5 contact-form" (ngSubmit)="onSubmitContactForm(contactForm.value)">
+          <div class="form-group">
+            <input class="form-control" formControlName="name" required id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Enter your name' [(ngModel)]="contact.name">
+            <div *ngIf="contactForm.controls.name.errors && (contactForm.controls.name.touched || contactForm.controls.name.dirty) " style="color: red">
+              <div *ngIf="contactForm.hasError('required', 'name')"></div>
+              Name is Required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" formControlName="email" required id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder = 'Enter email address' [(ngModel)]="contact.email">
+            <div *ngIf="contactForm.controls.email.errors && (contactForm.controls.email.touched || contactForm.controls.email.dirty) " style="color: red">
+              <div *ngIf="contactForm.hasError('required', 'email')"></div>
+              Email is Required in valid format.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" formControlName="subject" name="subject" required id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder = 'Enter Subject' [(ngModel)]="contact.subject">
+            <div *ngIf="contactForm.controls.subject.errors && (contactForm.controls.subject.touched || contactForm.controls.subject.dirty) " style="color: red">
+              <div *ngIf="contactForm.hasError('required', 'subject')"></div>
+               Subject is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea name="" id="" cols="30" rows="7" formControlName="message" class="form-control" placeholder="Message" name="message" [(ngModel)]="contact.message"></textarea>
+            <div *ngIf="contactForm.controls.message.errors && (contactForm.controls.message.touched || contactForm.controls.message.dirty) " style="color: red">
+              <div *ngIf="contactForm.hasError('required', 'message')"></div>
+              Message is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Send Message" [disabled]="!contactForm.valid" class="btn py-3 px-5" style="background-color: #ff8416; color: white">
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</section>

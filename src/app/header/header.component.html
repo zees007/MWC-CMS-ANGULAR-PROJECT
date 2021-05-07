@@ -1,0 +1,153 @@
+<div class="bg-top navbar-light ingredient">
+  <div class="container ">
+    <div class="row no-gutters d-flex align-items-center align-items-stretch">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="../../assets/mwc-logo-trans.png" width="250px">
+      </div>
+
+      <div class="col-lg-8 d-block py-md-2">
+        <div class="row d-flex">
+          <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+            <div class="icon d-flex justify-content-center align-items-center">
+              <fa-icon [icon]="faEnvelopeOpen" [styles]="{'stroke': '#ff8416', 'color': '#ff8416'}" size="lg"></fa-icon>
+            </div>
+            <div class="text">
+              <span style="color: #0F3B65">Email</span>
+              <span style="width: 215px">contact@mwc-consultancy.com</span>
+            </div>
+          </div>
+          <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+            <div class="icon d-flex justify-content-center align-items-center">
+              <fa-icon [icon]="faPhone" [styles]="{'stroke': '#ff8416', 'color': '#ff8416'}" size="lg"></fa-icon>
+            </div>
+            <div class="text">
+              <span style="color: #0F3B65">Call</span>
+              <span>+974 4423 1155</span>
+            </div>
+          </div>
+          <div class="col-md topper d-flex align-items-center justify-content-end">
+            <p class="mb-0 d-block">
+              <a class="btn" style="background-color: #ff8416" data-toggle="collapse" href="#collapseCallback"
+                 role="button" aria-expanded="false" aria-controls="collapseCallback">
+                <span style="color: white">Request a Callback</span>
+              </a>
+            </p>
+            <!--Call back popup start-->
+            <div class="collapse" id="collapseCallback">
+              <div class="login-box">
+                <h2>Raise Request</h2>
+                <form #callbackForm="ngForm" (ngSubmit)="onSubmitCallbackForm(callbackForm)">
+                  <div class="user-box">
+                    <input type="text" name="name"  required [(ngModel)]="callback.name" #name='ngModel' [class.is-invalid]="name.invalid && name.touched"/>
+                    <small class="text-danger" [class.d-none]="name.valid || name.untouched">*Name is required.</small>
+                    <label>*Name</label>
+
+                  </div>
+                  <div class="user-box">
+                    <input type="text" name="email" required [(ngModel)]="callback.email" #email='ngModel' [class.is-invalid]="email.invalid && email.touched">
+                    <small class="text-danger" [class.d-none]="email.valid || email.untouched">*Email is required.</small>
+                    <label>*Email</label>
+
+                  </div>
+                  <div class="user-box">
+                    <input type="tel" name="phone" required [(ngModel)]="callback.phone">
+                    <label>Phone</label>
+
+                  </div>
+
+                  <!-- Optional (hidden) fields -->
+                  <!-- Custom email Subject -->
+                  <input type="hidden" name="_subject" value="Contact form submitted...!!">
+                  <!-- Custom email ReplyTo Address -->
+<!--                  <input type="hidden" name="_replyto" value="foo@bar.co">-->
+                  <!-- Redirect to a page after recaptcha -->
+                  <input type="hidden" name="_after" value="http://www.mwc-consultancy.com">
+                  <!-- Honeypot (to catch comment spam bots) -->
+                  <input type="hidden" name="_honeypot" value="">
+                  <!-- Apply a custom confirmation message on the second step -->
+                  <input type="hidden" name="_confirmation" value="Hiii Test message">
+
+                  <button type="submit" class="btn-dark" [disabled]="callbackForm.invalid">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                  </button>	&amp;
+                  <button type="button" class="btn-dark" data-toggle="collapse" href="#collapseCallback">
+
+                    Cancel
+                  </button>
+
+                </form>
+
+
+              </div>
+
+            </div>
+            <!--Call back popup End-->
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container d-flex align-items-center">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars"></i> Menu
+    </button>
+    <form action="#" class="searchform order-lg-last">
+<!--      <div class="form-group d-flex">-->
+        <!--        <input type="text" class="form-control pl-3" placeholder="Search">-->
+<!--        <li type="submit" placeholder="" class="form-control search"><a-->
+<!--          href="https://www.facebook.com/concepthubclasses/?ref=bookmarks" target="_blank">-->
+<!--          <fa-icon [icon]="faFacebook" [styles]="{'stroke': '#ff8416', 'color': '#ff8416'}"></fa-icon>-->
+<!--        </a></li>-->
+<!--        <li type="submit" placeholder="" class="form-control search"><a href="https://twitter.com/CHCtanda"-->
+<!--                                                                        target="_blank">-->
+<!--          <fa-icon [icon]="faTwitter" [styles]="{'stroke': '#ff8416', 'color': '#ff8416'}"></fa-icon>-->
+<!--        </a></li>-->
+<!--        <li style=""><a> Follow Us</a></li>-->
+        <li type="submit" placeholder="" class="form-control search"><a href="https://www.linkedin.com/company/mwc-llc"
+                                                                        target="_blank">
+          <fa-icon [icon]="faLinkedin" [styles]="{'stroke': '#ff8416', 'color': '#ff8416'}"></fa-icon>
+        </a></li>
+<!--        <li type="submit" placeholder="" class="form-control search"><a href="#" target="_blank">-->
+<!--          <fa-icon [icon]="faInstagram" [styles]="{'stroke': '#ff8416', 'color': '#ff8416'}"></fa-icon>-->
+<!--        </a></li>-->
+
+<!--      </div>-->
+    </form>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a routerLink="/" routerLinkActive="active" class="nav-link pl-0">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a></li>
+        <!--        <li class="nav-item"><a class="nav-link" routerLink="/services"  routerLinkActive="active">Services</a></li>-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink="/services" routerLinkActive="active" id="navbarDropdown"
+             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Our Services
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a style="color: #606060" class="dropdown-item" routerLink="/service/business-management"
+               routerLinkActive="active">Business & Management</a>
+            <a style="color: #606060" class="dropdown-item" routerLink="/service/project-management"
+               routerLinkActive="active">Project Management</a>
+            <a style="color: #606060" class="dropdown-item" routerLink="/service/environment"
+               routerLinkActive="active">Environmental</a>
+            <a style="color: #606060" class="dropdown-item" routerLink="/service/business-professional-management"
+               routerLinkActive="active">Business and Professional Education</a>
+          </div>
+        </li>
+        <li class="nav-item"><a routerLink="/contact-us" routerLinkActive="active" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- END nav -->
